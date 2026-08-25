@@ -12,7 +12,7 @@ jobs:
       mysql:
         image: mysql:8.0
         env: 
-          MYSQL_PASSWORD: testpassword
+          MYSQL_ROOT_PASSWORD: testpassword
         ports:
           - 3306:3306
         options: >-
