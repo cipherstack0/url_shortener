@@ -5,8 +5,8 @@ BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 def get_connection(database=None):
     return mysql.connector.connect(
-        host="localhost",         #where your database lives (for now, your own PC)
-        user="root",              #your MySQL username
+        host=os.getenv("MYSQL_HOST","localhost"),         #where your database lives (for now, your own PC)
+        user=os.getenv("MYSQL_USER", "root"),              #your MySQL username
         password = os.getenv("MYSQL_PASSWORD"),  # password in env
         database=database
     )
